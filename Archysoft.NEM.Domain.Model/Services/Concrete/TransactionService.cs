@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
+using Archysoft.NEM.Data.Repositories.Abstract;
 using Archysoft.NEM.Domain.Model.Services.Abstract;
 using io.nem1.sdk.Infrastructure.HttpRepositories;
 using io.nem1.sdk.Model.Accounts;
@@ -8,13 +9,22 @@ using io.nem1.sdk.Model.Blockchain;
 using io.nem1.sdk.Model.Mosaics;
 using io.nem1.sdk.Model.Transactions;
 using io.nem1.sdk.Model.Transactions.Messages;
-using RestSharp;
-using SimpleJson;
+using TransactionInfo = Archysoft.NEM.Data.Entities.TransactionInfo;
+
 
 namespace Archysoft.NEM.Domain.Model.Services.Concrete
 {
-    public class TransactionService:ITransactionService
+    public class TransactionService : ITransactionService
     {
+
+        private ITransactionInfoRepository _transactionInfoRepository;
+
+        public TransactionService(ITransactionInfoRepository transactionInfoRepository)
+        {
+            _transactionInfoRepository = transactionInfoRepository;
+        }
+
+
         string host = "http://23.228.67.85:7890";
         string host2 = "http://104.128.226.60:7890";
         public async Task<TransactionResponse> Send(object data)
@@ -38,7 +48,7 @@ namespace Archysoft.NEM.Domain.Model.Services.Concrete
 
 
 
-            var response = await new TransactionHttp(host).Announce(multisigTransaction);
+            TransactionResponse response = await new TransactionHttp(host).Announce(multisigTransaction);
 
             var signatureTransaction = CosignatureTransaction.Create(
                 NetworkType.Types.TEST_NET,
@@ -47,13 +57,20 @@ namespace Archysoft.NEM.Domain.Model.Services.Concrete
                 multisigAccount.Address
             ).SignWith(secondCosig);
 
-            var response2 = await new TransactionHttp(host).Announce(signatureTransaction);
+            TransactionResponse response2 = await new TransactionHttp(host).Announce(signatureTransaction);
 
             //var localVarPath = "/transaction/announce";
             //var client = new RestClient(host);
             //var request = new RestRequest(localVarPath, Method.POST);
             //request.AddParameter("application/json", data, ParameterType.RequestBody);
             //var resp = client.Execute(request);
+
+            if (response.Status == "1")
+            {
+                TransactionInfo transactionInfo = new TransactionInfo
+                { Id = 1, Hash = response.Hash, InnerHash = response.InnerHash };
+                _transactionInfoRepository.AddTransaction(transactionInfo);
+            }
 
             return null;
         }

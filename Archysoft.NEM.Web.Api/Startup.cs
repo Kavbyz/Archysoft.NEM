@@ -1,4 +1,6 @@
-﻿using Archysoft.NEM.Domain.Model.Services.Abstract;
+﻿using Archysoft.NEM.Data.Repositories.Abstract;
+using Archysoft.NEM.Data.Repositories.Concrete;
+using Archysoft.NEM.Domain.Model.Services.Abstract;
 using Archysoft.NEM.Domain.Model.Services.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,7 +22,12 @@ namespace Archysoft.NEM.Web.Api
         {
             services.AddMvc();
 
+            //services
             services.AddTransient<ITransactionService, TransactionService>();
+
+            //repositories
+            services.AddTransient<ITransactionInfoRepository, TransactionInfoRepository>();
+
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
