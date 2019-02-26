@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{3AAD3C06-C7F3-4214-9BFB-494D2378E3FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{B180DE30-9158-4487-832C-19E4E864332B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5E7926CC-6412-4BAC-83A0-655E9450280C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{96F0F22D-0048-43D3-BA66-B2870EAF1A0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archysoft.NEM.Data", "Archysoft.NEM.Data\Archysoft.NEM.Data.csproj", "{69EA2FFD-E6DB-4AC7-B965-E278835F4AFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archysoft.NEM.Domain.Model", "Archysoft.NEM.Domain.Model\Archysoft.NEM.Domain.Model.csproj", "{E673F79E-3CD3-462F-A43A-61D7B8B6F41B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archysoft.NEM.Web.Api", "Archysoft.NEM.Web.Api\Archysoft.NEM.Web.Api.csproj", "{75B0BA76-12DC-4842-821B-DFCE174611B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "IntegrationTests", "{268976D6-6BA9-4338-A01A-01C0AFD4C06C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{D1BB6E0A-3F18-45B6-898F-03647BEDDC14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69EA2FFD-E6DB-4AC7-B965-E278835F4AFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69EA2FFD-E6DB-4AC7-B965-E278835F4AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69EA2FFD-E6DB-4AC7-B965-E278835F4AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69EA2FFD-E6DB-4AC7-B965-E278835F4AFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E673F79E-3CD3-462F-A43A-61D7B8B6F41B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E673F79E-3CD3-462F-A43A-61D7B8B6F41B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E673F79E-3CD3-462F-A43A-61D7B8B6F41B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E673F79E-3CD3-462F-A43A-61D7B8B6F41B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75B0BA76-12DC-4842-821B-DFCE174611B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75B0BA76-12DC-4842-821B-DFCE174611B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75B0BA76-12DC-4842-821B-DFCE174611B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75B0BA76-12DC-4842-821B-DFCE174611B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{69EA2FFD-E6DB-4AC7-B965-E278835F4AFD} = {3AAD3C06-C7F3-4214-9BFB-494D2378E3FA}
+		{E673F79E-3CD3-462F-A43A-61D7B8B6F41B} = {B180DE30-9158-4487-832C-19E4E864332B}
+		{75B0BA76-12DC-4842-821B-DFCE174611B7} = {96F0F22D-0048-43D3-BA66-B2870EAF1A0C}
+		{268976D6-6BA9-4338-A01A-01C0AFD4C06C} = {5E7926CC-6412-4BAC-83A0-655E9450280C}
+		{D1BB6E0A-3F18-45B6-898F-03647BEDDC14} = {5E7926CC-6412-4BAC-83A0-655E9450280C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {380E300E-5159-4985-B089-81A3D0F957EB}
+	EndGlobalSection
+EndGlobal
